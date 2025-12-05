@@ -89,6 +89,7 @@
             <img
               src="concepts/skires.png"
               alt="Ski Resort"
+              data-description="A scenic mountain ski resort with snow-covered peaks and cozy lodges nestled in the alpine landscape."
               style="width:100%;cursor:pointer"
               onclick="openModal(this)"
             />
@@ -97,6 +98,7 @@
             <img
               src="concepts/estate.png"
               alt="Swamp Estate"
+              data-description="A mysterious estate surrounded by swampy wetlands, with gothic architecture and an air of secrecy."
               style="width:100%;cursor:pointer"
               onclick="openModal(this)"
             />
@@ -105,6 +107,7 @@
             <img
               src="concepts/deejay.png"
               alt="DJ Candy Club"
+              data-description="A vibrant nightclub scene with neon lights, a DJ booth, and energetic atmosphere perfect for undercover operations."
               style="width:100%;cursor:pointer"
               onclick="openModal(this)"
             />
@@ -112,7 +115,8 @@
           <div class="w3-col s6 m3 w3-margin-bottom">
             <img
               src="concepts/boat.png"
-              alt="boat"
+              alt="Underwater shipwreck"
+              data-description="An underwater shipwreck resting on the ocean floor, surrounded by marine life and mysterious depths that hide secrets from the surface world."
               style="width:100%;cursor:pointer"
               onclick="openModal(this)"
             />
@@ -179,7 +183,9 @@
         var caption = document.getElementById("modalCaption");
         modal.style.display = "block";
         modalImg.src = img.src;
-        caption.textContent = img.alt || "";
+        modalImg.alt = img.alt || "";
+        var description = img.getAttribute("data-description") || img.alt || "";
+        caption.textContent = description;
       }
       function spinSite() {
         document.body.classList.add("spin-site");

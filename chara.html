@@ -60,48 +60,72 @@
 
     <!-- Top bar -->
     <header class="w3-bar w3-black">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
       <span class="w3-bar-item w3-large"><a href="home.html">MISSION STATUS</a> &gt; CHARACTERS</span>
       <button
         class="w3-bar-item w3-button w3-xlarge w3-right"
         onclick="openSidebar()"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        id="menu-toggle"
       >
         ☰
       </button>
     </header>
 
     <div class="page-wrapper">
-      <main>
+      <main id="main-content">
         <h2>Character Files</h2>
 
         <!-- Horizontal tabs -->
-        <div class="w3-bar tab-bar">
+        <div class="w3-bar tab-bar" role="tablist" aria-label="Character file tabs">
         <button
           class="w3-bar-item w3-button tablink active-tab"
           onclick="openTab(event, 'agent')"
+          role="tab"
+          aria-selected="true"
+          aria-controls="agent"
+          id="tab-agent"
         >
           Lead Agent
         </button>
         <button
           class="w3-bar-item w3-button tablink"
           onclick="openTab(event, 'support')"
+          role="tab"
+          aria-selected="false"
+          aria-controls="support"
+          id="tab-support"
         >
           Support
         </button>
         <button
           class="w3-bar-item w3-button tablink"
           onclick="openTab(event, 'antagonist')"
+          role="tab"
+          aria-selected="false"
+          aria-controls="antagonist"
+          id="tab-antagonist"
         >
           Antagonist
         </button>
         <button
           class="w3-bar-item w3-button tablink"
           onclick="openTab(event, 'handler')"
+          role="tab"
+          aria-selected="false"
+          aria-controls="handler"
+          id="tab-handler"
         >
           Handler
         </button>
         <button
           class="w3-bar-item w3-button tablink"
           onclick="openTab(event, 'civilians')"
+          role="tab"
+          aria-selected="false"
+          aria-controls="civilians"
+          id="tab-civilians"
         >
           Civilians
         </button>
@@ -112,6 +136,8 @@
           id="agent"
           class="w3-container w3-white w3-card file-card w3-padding tab"
           style="margin-top:0"
+          role="tabpanel"
+          aria-labelledby="tab-agent"
         >
         <div class="w3-row">
           <div class="w3-col s8">
@@ -149,7 +175,7 @@
           <div class="w3-col s4">
             <img
               src="img/buddy.png"
-              alt="Character profile"
+              alt="Lead agent character profile portrait"
               class="char-profile w3-right w3-margin-top w3-margin-left"
             />
           </div>
@@ -161,43 +187,43 @@
           id="support"
           class="w3-container w3-white w3-card file-card w3-padding tab"
           style="margin-top:0;display:none"
+          aria-labelledby="support-heading"
         >
         <div class="w3-row">
           <div class="w3-col s8">
-            <h3>CHARACTER BIO</h3>
-            <p><strong>[SURNAME], [FIRST] "NICKNAME" [M.]</strong></p>
+            <h3 id="support-heading">CHARACTER BIO</h3>
+            <p><strong>Miller, James "Buddy" T.</strong></p>
             
             <h4>Basic Information</h4>
-            <p><strong>OCCUPATION:</strong> [Occupation]</p>
-            <p><strong>PRONOUNS:</strong> [Pronouns]</p>
-            <p><strong>GENDER:</strong> [Gender]</p>
-            <p><strong>SEX:</strong> [Sex]</p>
-            <p><strong>AGE:</strong> [Age]</p>
-            <p><strong>BIRTHDAY:</strong> [Birthday]</p>
-            <p><strong>HEIGHT:</strong> [Height]</p>
-            <p><strong>BLOOD TYPE:</strong> [Blood Type]</p>
+            <p><strong>OCCUPATION:</strong> Visual Artist / Creative Support</p>
+            <p><strong>PRONOUNS:</strong> He/Him</p>
+            <p><strong>GENDER:</strong> Male</p>
+            <p><strong>SEX:</strong> Male</p>
+            <p><strong>AGE:</strong> 26</p>
+            <p><strong>BIRTHDAY:</strong> March 15</p>
+            <p><strong>HEIGHT:</strong> 5'10"</p>
+            <p><strong>BLOOD TYPE:</strong> O+</p>
             
             <h4>Preferences</h4>
-            <p><strong>LIKES:</strong> [Likes]</p>
-            <p><strong>DISLIKES:</strong> [Dislikes]</p>
+            <p><strong>LIKES:</strong> Art supplies, coffee shops, people-watching, bright colors, sketching during briefings, making everyone laugh, hanging out with his best friend</p>
+            <p><strong>DISLIKES:</strong> Boring meetings, running out of sketch paper, when people don't appreciate his doodles, seeing his best friend stressed</p>
             
             <h4>COLOR PALETTE</h4>
-            <p><strong>HAIR:</strong> [Hair color]</p>
-            <p><strong>EYES:</strong> [Eye color]</p>
-            <p><strong>SKIN:</strong> [Skin tone]</p>
+            <p><strong>HAIR:</strong> Blonde</p>
+            <p><strong>EYES:</strong> Blue</p>
+            <p><strong>SKIN:</strong> Fair</p>
             
             <h4>Additional Notes</h4>
-            <p><strong>Position:</strong> Tech / Analyst / Logistics</p>
-            <p><strong>Summary:</strong> How they keep the operation from
-              falling apart behind the scenes.
+            <p><strong>Position:</strong> Creative Support / Visual Documentation</p>
+            <p><strong>Summary:</strong> The resident artist who somehow ended up in intelligence work. James keeps the operation running with his quick sketches, visual recon, and ability to make even the most serious agents crack a smile. He documents everything in his sketchbook and has a habit of doodling during important briefings—much to his handler's chagrin.
             </p>
-            <p><strong>Specialties:</strong> [Hacking, gadgets, research, etc.]</p>
-            <p><strong>Relationship to Agent:</strong> [Dynamic & vibes]</p>
+            <p><strong>Specialties:</strong> Visual documentation, sketch-based reconnaissance, creating cover art for fake identities, lightening the mood when things get too tense</p>
+            <p><strong>Relationship to Agent:</strong> Best friend of the lead agent. The cheerful, slightly chaotic friend who keeps things fun and always has the lead agent's back. Always ready with a joke or a perfectly timed sketch that somehow ends up being useful. Their friendship goes way back, and he's one of the few people the lead agent truly trusts.</p>
           </div>
           <div class="w3-col s4">
             <img
               src="img/buddy.png"
-              alt="Character profile"
+              alt="James Miller, known as Buddy, a blonde male character with blue eyes, support staff visual artist and best friend of the lead agent"
               class="char-profile w3-right w3-margin-top w3-margin-left"
             />
           </div>
@@ -209,6 +235,8 @@
           id="antagonist"
           class="w3-container w3-white w3-card file-card w3-padding tab"
           style="margin-top:0;display:none"
+          role="tabpanel"
+          aria-labelledby="tab-antagonist"
         >
         <div class="w3-row">
           <div class="w3-col s8">
@@ -245,7 +273,7 @@
           <div class="w3-col s4">
             <img
               src="img/buddy.png"
-              alt="Antagonist profile"
+              alt="Antagonist character profile portrait"
               class="char-profile w3-right w3-margin-top w3-margin-left"
             />
           </div>
@@ -257,6 +285,8 @@
           id="handler"
           class="w3-container w3-white w3-card file-card w3-padding tab"
           style="margin-top:0;display:none"
+          role="tabpanel"
+          aria-labelledby="tab-handler"
         >
         <div class="w3-row">
           <div class="w3-col s8">
@@ -293,7 +323,7 @@
           <div class="w3-col s4">
             <img
               src="img/buddy.png"
-              alt="Character profile"
+              alt="Lead agent character profile portrait"
               class="char-profile w3-right w3-margin-top w3-margin-left"
             />
           </div>
@@ -305,6 +335,8 @@
           id="civilians"
           class="w3-container w3-white w3-card file-card w3-padding tab"
           style="margin-top:0;display:none"
+          role="tabpanel"
+          aria-labelledby="tab-civilians"
         >
         <div class="w3-row">
           <div class="w3-col s8">
@@ -344,7 +376,7 @@
           <div class="w3-col s4">
             <img
               src="img/buddy.png"
-              alt="Character profile"
+              alt="Lead agent character profile portrait"
               class="char-profile w3-right w3-margin-top w3-margin-left"
             />
           </div>
@@ -366,10 +398,20 @@
 
     <script>
       function openSidebar() {
-        document.getElementById("sidebar").style.display = "block";
+        var sidebar = document.getElementById("sidebar");
+        var menuToggle = document.getElementById("menu-toggle");
+        sidebar.style.display = "block";
+        if (menuToggle) {
+          menuToggle.setAttribute("aria-expanded", "true");
+        }
       }
       function closeSidebar() {
-        document.getElementById("sidebar").style.display = "none";
+        var sidebar = document.getElementById("sidebar");
+        var menuToggle = document.getElementById("menu-toggle");
+        sidebar.style.display = "none";
+        if (menuToggle) {
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
       }
       function toggleWorldDropdown() {
         var menu = document.getElementById("worldMenu");
@@ -390,9 +432,11 @@
         var links = document.getElementsByClassName("tablink");
         for (i = 0; i < links.length; i++) {
           links[i].classList.remove("active-tab");
+          links[i].setAttribute("aria-selected", "false");
         }
         document.getElementById(tabId).style.display = "block";
         evt.currentTarget.classList.add("active-tab");
+        evt.currentTarget.setAttribute("aria-selected", "true");
       }
       function spinSite() {
         document.body.classList.add("spin-site");
