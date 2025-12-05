@@ -1,0 +1,293 @@
+/* Global typography and base styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "League Spartan", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ensure header stays at top and is always visible */
+body > header {
+  flex-shrink: 0;
+  order: 1;
+}
+
+/* Color palette
+   w3-grey, w3-light-grey, w3-info, w3-asphalt
+   #F4B860 (sun), #283044 (nav/header), #CCDBE0 (paper), #118AB2 (info),
+   #2E2F2F (asphalt) */
+
+/* Use #283044 for everything that uses w3-black (headers, nav, key buttons) */
+.w3-black,
+.w3-hover-black:hover {
+  background-color: #283044 !important;
+  color: #ccdbe0 !important;
+}
+
+/* Info / primary accent */
+.w3-info {
+  background-color: #118ab2 !important;
+  color: #ccdbe0 !important;
+}
+
+/* Asphalt tone */
+.w3-asphalt {
+  background-color: #2e2f2f !important;
+  color: #f4b860 !important;
+}
+
+/* Utility helpers for custom hex colors if you want to use them directly */
+.bg-sun {
+  background-color: #f4b860;
+}
+
+.bg-paper {
+  background-color: #ccdbe0;
+}
+
+.bg-asphalt {
+  background-color: #2e2f2f;
+}
+
+/* Character file styling */
+.file-card {
+  border-radius: 0;
+  overflow: hidden;
+}
+.char-profile {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .char-profile {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Rounded top corners for tab buttons */
+.tablink {
+  border-radius: 12px 12px 0 0;
+}
+
+/* Character tabs connected look */
+.tab-bar {
+  margin-top: 16px;
+  border-bottom: 2px solid #283044;
+}
+
+.tablink {
+  border-bottom: none !important;
+  background-color: #ccdbe0;
+  color: #283044;
+}
+
+.tablink.active-tab {
+  background-color: #283044 !important;
+  color: #ccdbe0 !important;
+}
+
+.file-card {
+  border-top: 2px solid #283044;
+  margin-top: 0;
+}
+
+/* Ensure sidebar is properly positioned */
+#sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  height: 100% !important;
+  z-index: 3 !important;
+  overflow-y: auto;
+  background-color: #2e2f2f !important;
+  color: #ccdbe0 !important;
+}
+
+/* Sidebar buttons and links styling for contrast */
+#sidebar .w3-button,
+#sidebar .w3-bar-item {
+  color: #ccdbe0 !important;
+}
+
+#sidebar .w3-button:hover,
+#sidebar .w3-bar-item:hover {
+  background-color: #283044 !important;
+  color: #ccdbe0 !important;
+}
+
+/* Dropdown menu styling for better readability */
+#sidebar #worldMenu {
+  background-color: #283044 !important;
+}
+
+#sidebar #worldMenu .w3-button,
+#sidebar #worldMenu .w3-bar-item {
+  color: #ccdbe0 !important;
+  background-color: #283044 !important;
+}
+
+#sidebar #worldMenu .w3-button:hover,
+#sidebar #worldMenu .w3-bar-item:hover {
+  background-color: #2e2f2f !important;
+  color: #ccdbe0 !important;
+}
+
+/* Ensure header is visible and properly positioned */
+header.w3-bar {
+  position: relative !important;
+  z-index: 2 !important;
+  display: block !important;
+  width: 100% !important;
+  visibility: visible !important;
+  flex-shrink: 0 !important;
+  order: 1 !important;
+}
+
+/* Override any W3.CSS media queries that might hide header */
+@media (min-width: 601px) {
+  header.w3-bar {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+
+/* Make sidebar a bit narrower on small screens */
+@media (max-width: 600px) {
+  #sidebar {
+    width: 70% !important;
+  }
+}
+
+/* Bigger nav/header text */
+.w3-bar .w3-bar-item {
+  font-size: 1.05rem;
+}
+
+.w3-bar .w3-button.w3-xlarge {
+  font-size: 1.6rem;
+}
+
+/* Larger header */
+header.w3-bar {
+  padding: 20px 16px !important;
+  min-height: 70px;
+}
+
+header.w3-bar .w3-bar-item.w3-large {
+  font-size: 1.5rem !important;
+  font-weight: 600;
+}
+
+header.w3-bar .w3-bar-item a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header.w3-bar .w3-bar-item a:hover {
+  opacity: 0.8;
+}
+
+/* Generic page wrapper for breathing room */
+.page-wrapper {
+  max-width: 1080px;
+  margin: 32px auto 40px auto;
+  padding: 0 16px;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  order: 2;
+}
+
+.page-wrapper > main {
+  flex: 1 0 auto;
+}
+
+.page-wrapper > footer {
+  margin-top: auto;
+}
+
+/* Spin animation for whole site */
+@keyframes spinSite {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body.spin-site {
+  animation: spinSite 1s linear;
+}
+
+/* Carousel image fitting */
+.w3-display-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.world-slide {
+  width: 100%;
+  max-width: 100%;
+}
+
+.world-slide .w3-card {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.world-slide .w3-card img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 320px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 600px) {
+  .world-slide .w3-card img {
+    max-height: 240px;
+  }
+}
+
+/* Gallery thumbnail image fitting */
+.w3-row-padding .w3-col img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background-color: #f5f5f5;
+}
+
+/* Modal image fitting */
+#modalImg {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* Back button styling */
+.back-to-carousel {
+  margin-bottom: 16px;
+}
+

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MISSION STATUS > LOGS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- W3.CSS -->
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/w3css/4/w3.css"
+    />
+
+    <!-- League Spartan font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap"
+    />
+
+    <!-- Project stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="w3-light-grey">
+    <!-- Slide-out sidebar (right) -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-right"
+      style="display:none;width:220px;right:0"
+      id="sidebar"
+    >
+      <button
+        class="w3-bar-item w3-button w3-large"
+        onclick="closeSidebar()"
+      >
+        ✕ Close
+      </button>
+      <a href="home.html" class="w3-bar-item w3-button">HOME</a>
+      <a href="chara.html" class="w3-bar-item w3-button">CHARACTERS</a>
+      <div class="w3-dropdown-click">
+        <button
+          class="w3-button w3-block w3-left-align"
+          onclick="toggleWorldDropdown()"
+        >
+          WORLD ▼
+        </button>
+        <div
+          id="worldMenu"
+          class="w3-hide w3-white"
+        >
+          <a href="world.html" class="w3-bar-item w3-button">World Overview</a>
+          <a href="headquarters.html" class="w3-bar-item w3-button">HQ Gallery</a>
+          <a href="headquarters1.html" class="w3-bar-item w3-button">HQ Gallery 1</a>
+          <a href="headquarters2.html" class="w3-bar-item w3-button">HQ Gallery 2</a>
+          <a href="headquarters3.html" class="w3-bar-item w3-button">HQ Gallery 3</a>
+        </div>
+      </div>
+      <a href="logs.html" class="w3-bar-item w3-button">LOGS</a>
+      <a href="contact.html" class="w3-bar-item w3-button">CONTACT</a>
+      <a href="dev.html" class="w3-bar-item w3-button">DEV ROADMAP</a>
+    </nav>
+
+    <!-- Top bar -->
+    <header class="w3-bar w3-black">
+      <span class="w3-bar-item w3-large"><a href="home.html">MISSION STATUS</a> &gt; LOGS</span>
+      <button
+        class="w3-bar-item w3-button w3-xlarge w3-right"
+        onclick="openSidebar()"
+      >
+        ☰
+      </button>
+    </header>
+
+    <div class="page-wrapper">
+      <main>
+        <h2>Mission Logs</h2>
+        <p>
+          Central index of all logs. Click a title to open the full entry.
+        </p>
+
+        <section class="w3-margin-top">
+          <div
+            class="w3-card w3-white"
+            style="max-height:320px; overflow-y:auto; overflow-x:auto"
+          >
+            <table class="w3-table w3-striped w3-small" style="min-width: 360px">
+              <thead class="w3-grey">
+                <tr>
+                  <th>DATE</th>
+                  <th>LOG #</th>
+                  <th>TITLE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>00.00</td>
+                  <td>00</td>
+                  <td>
+                    <a href="ground zero.html" target="_blank">GROUND ZERO</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>--.--</td>
+                  <td>01</td>
+                  <td>[Future Entry]</td>
+                </tr>
+                <tr>
+                  <td>--.--</td>
+                  <td>02</td>
+                  <td>[Future Entry]</td>
+                </tr>
+                <tr>
+                  <td>--.--</td>
+                  <td>03</td>
+                  <td>[Future Entry]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer class="w3-center w3-small w3-padding-16 w3-text-grey">
+        EA owns MySims Agents - I'm just doing this for fun
+        <button
+          class="w3-button w3-black w3-small w3-margin-left"
+          type="button"
+          onclick="spinSite()"
+        >
+          Spin
+        </button>
+      </footer>
+    </div>
+
+    <script>
+      function openSidebar() {
+        document.getElementById("sidebar").style.display = "block";
+      }
+      function closeSidebar() {
+        document.getElementById("sidebar").style.display = "none";
+      }
+      function toggleWorldDropdown() {
+        var menu = document.getElementById("worldMenu");
+        if (menu.classList.contains("w3-show")) {
+          menu.classList.remove("w3-show");
+          menu.classList.add("w3-hide");
+        } else {
+          menu.classList.remove("w3-hide");
+          menu.classList.add("w3-show");
+        }
+      }
+      function spinSite() {
+        document.body.classList.add("spin-site");
+        setTimeout(function () {
+          document.body.classList.remove("spin-site");
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
+

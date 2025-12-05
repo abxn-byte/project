@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MISSION STATUS > CHARACTERS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- W3.CSS -->
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/w3css/4/w3.css"
+    />
+
+    <!-- League Spartan font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap"
+    />
+
+    <!-- Project stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="w3-light-grey">
+    <!-- Slide-out sidebar (shared, right) -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-right"
+      style="display:none;width:220px;right:0"
+      id="sidebar"
+    >
+      <button
+        class="w3-bar-item w3-button w3-large"
+        onclick="closeSidebar()"
+      >
+        ✕ Close
+      </button>
+      <a href="home.html" class="w3-bar-item w3-button">HOME</a>
+      <a href="chara.html" class="w3-bar-item w3-button">CHARACTERS</a>
+      <div class="w3-dropdown-click">
+        <button
+          class="w3-button w3-block w3-left-align"
+          onclick="toggleWorldDropdown()"
+        >
+          WORLD ▼
+        </button>
+        <div
+          id="worldMenu"
+          class="w3-hide w3-white"
+        >
+          <a href="world.html" class="w3-bar-item w3-button">World Overview</a>
+          <a href="headquarters.html" class="w3-bar-item w3-button">HQ Gallery</a>
+          <a href="headquarters1.html" class="w3-bar-item w3-button">HQ Gallery 1</a>
+          <a href="headquarters2.html" class="w3-bar-item w3-button">HQ Gallery 2</a>
+          <a href="headquarters3.html" class="w3-bar-item w3-button">HQ Gallery 3</a>
+        </div>
+      </div>
+      <a href="logs.html" class="w3-bar-item w3-button">LOGS</a>
+      <a href="contact.html" class="w3-bar-item w3-button">CONTACT</a>
+      <a href="dev.html" class="w3-bar-item w3-button">DEV ROADMAP</a>
+    </nav>
+
+    <!-- Top bar -->
+    <header class="w3-bar w3-black">
+      <span class="w3-bar-item w3-large"><a href="home.html">MISSION STATUS</a> &gt; CHARACTERS</span>
+      <button
+        class="w3-bar-item w3-button w3-xlarge w3-right"
+        onclick="openSidebar()"
+      >
+        ☰
+      </button>
+    </header>
+
+    <div class="page-wrapper">
+      <main>
+        <h2>Character Files</h2>
+
+        <!-- Horizontal tabs -->
+        <div class="w3-bar tab-bar">
+        <button
+          class="w3-bar-item w3-button tablink active-tab"
+          onclick="openTab(event, 'agent')"
+        >
+          Lead Agent
+        </button>
+        <button
+          class="w3-bar-item w3-button tablink"
+          onclick="openTab(event, 'support')"
+        >
+          Support
+        </button>
+        <button
+          class="w3-bar-item w3-button tablink"
+          onclick="openTab(event, 'antagonist')"
+        >
+          Antagonist
+        </button>
+        <button
+          class="w3-bar-item w3-button tablink"
+          onclick="openTab(event, 'handler')"
+        >
+          Handler
+        </button>
+        <button
+          class="w3-bar-item w3-button tablink"
+          onclick="openTab(event, 'civilians')"
+        >
+          Civilians
+        </button>
+      </div>
+
+        <!-- Lead Agent file -->
+        <section
+          id="agent"
+          class="w3-container w3-white w3-card file-card w3-padding tab"
+          style="margin-top:0"
+        >
+        <div class="w3-row">
+          <div class="w3-col s8">
+            <h3>CHARACTER BIO</h3>
+            <p><strong>[SURNAME], [FIRST] "NICKNAME" [M.]</strong></p>
+            
+            <h4>Basic Information</h4>
+            <p><strong>OCCUPATION:</strong> [Occupation]</p>
+            <p><strong>PRONOUNS:</strong> [Pronouns]</p>
+            <p><strong>GENDER:</strong> [Gender]</p>
+            <p><strong>SEX:</strong> [Sex]</p>
+            <p><strong>AGE:</strong> [Age]</p>
+            <p><strong>BIRTHDAY:</strong> [Birthday]</p>
+            <p><strong>HEIGHT:</strong> [Height]</p>
+            <p><strong>BLOOD TYPE:</strong> [Blood Type]</p>
+            
+            <h4>Preferences</h4>
+            <p><strong>LIKES:</strong> [Likes]</p>
+            <p><strong>DISLIKES:</strong> [Dislikes]</p>
+            
+            <h4>COLOR PALETTE</h4>
+            <p><strong>HAIR:</strong> [Hair color]</p>
+            <p><strong>EYES:</strong> [Eye color]</p>
+            <p><strong>SKIN:</strong> [Skin tone]</p>
+            
+            <h4>Additional Notes</h4>
+            <p><strong>Callsign:</strong> [Codename]</p>
+            <p><strong>Role:</strong> Field Lead / Investigator</p>
+            <p><strong>Summary:</strong> Brief description of who they are,
+              what they want, and why HQ keeps assigning them the weird cases.
+            </p>
+            <p><strong>Skills:</strong> [List core skills]</p>
+            <p><strong>Notes:</strong> Secrets, red flags, or running gags.</p>
+          </div>
+          <div class="w3-col s4">
+            <img
+              src="img/buddy.png"
+              alt="Character profile"
+              class="char-profile w3-right w3-margin-top w3-margin-left"
+            />
+          </div>
+        </div>
+      </section>
+
+        <!-- Support file -->
+        <section
+          id="support"
+          class="w3-container w3-white w3-card file-card w3-padding tab"
+          style="margin-top:0;display:none"
+        >
+        <div class="w3-row">
+          <div class="w3-col s8">
+            <h3>CHARACTER BIO</h3>
+            <p><strong>[SURNAME], [FIRST] "NICKNAME" [M.]</strong></p>
+            
+            <h4>Basic Information</h4>
+            <p><strong>OCCUPATION:</strong> [Occupation]</p>
+            <p><strong>PRONOUNS:</strong> [Pronouns]</p>
+            <p><strong>GENDER:</strong> [Gender]</p>
+            <p><strong>SEX:</strong> [Sex]</p>
+            <p><strong>AGE:</strong> [Age]</p>
+            <p><strong>BIRTHDAY:</strong> [Birthday]</p>
+            <p><strong>HEIGHT:</strong> [Height]</p>
+            <p><strong>BLOOD TYPE:</strong> [Blood Type]</p>
+            
+            <h4>Preferences</h4>
+            <p><strong>LIKES:</strong> [Likes]</p>
+            <p><strong>DISLIKES:</strong> [Dislikes]</p>
+            
+            <h4>COLOR PALETTE</h4>
+            <p><strong>HAIR:</strong> [Hair color]</p>
+            <p><strong>EYES:</strong> [Eye color]</p>
+            <p><strong>SKIN:</strong> [Skin tone]</p>
+            
+            <h4>Additional Notes</h4>
+            <p><strong>Position:</strong> Tech / Analyst / Logistics</p>
+            <p><strong>Summary:</strong> How they keep the operation from
+              falling apart behind the scenes.
+            </p>
+            <p><strong>Specialties:</strong> [Hacking, gadgets, research, etc.]</p>
+            <p><strong>Relationship to Agent:</strong> [Dynamic & vibes]</p>
+          </div>
+          <div class="w3-col s4">
+            <img
+              src="img/buddy.png"
+              alt="Character profile"
+              class="char-profile w3-right w3-margin-top w3-margin-left"
+            />
+          </div>
+        </div>
+      </section>
+
+        <!-- Antagonist file -->
+        <section
+          id="antagonist"
+          class="w3-container w3-white w3-card file-card w3-padding tab"
+          style="margin-top:0;display:none"
+        >
+        <div class="w3-row">
+          <div class="w3-col s8">
+            <h3>CHARACTER BIO</h3>
+            <p><strong>[SURNAME], [FIRST] "NICKNAME" [M.]</strong></p>
+            
+            <h4>Basic Information</h4>
+            <p><strong>OCCUPATION:</strong> [Occupation]</p>
+            <p><strong>PRONOUNS:</strong> [Pronouns]</p>
+            <p><strong>GENDER:</strong> [Gender]</p>
+            <p><strong>SEX:</strong> [Sex]</p>
+            <p><strong>AGE:</strong> [Age]</p>
+            <p><strong>BIRTHDAY:</strong> [Birthday]</p>
+            <p><strong>HEIGHT:</strong> [Height]</p>
+            <p><strong>BLOOD TYPE:</strong> [Blood Type]</p>
+            
+            <h4>Preferences</h4>
+            <p><strong>LIKES:</strong> [Likes]</p>
+            <p><strong>DISLIKES:</strong> [Dislikes]</p>
+            
+            <h4>COLOR PALETTE</h4>
+            <p><strong>HAIR:</strong> [Hair color]</p>
+            <p><strong>EYES:</strong> [Eye color]</p>
+            <p><strong>SKIN:</strong> [Skin tone]</p>
+            
+            <h4>Additional Notes</h4>
+            <p><strong>Alias:</strong> [Public mask / codename]</p>
+            <p><strong>Summary:</strong> What they control, what they want,
+              and why they are a problem for HQ.
+            </p>
+            <p><strong>Influence:</strong> [Networks, money, leverage]</p>
+            <p><strong>Threat Level:</strong> [Low / Medium / High / Oh No]</p>
+          </div>
+          <div class="w3-col s4">
+            <img
+              src="img/buddy.png"
+              alt="Antagonist profile"
+              class="char-profile w3-right w3-margin-top w3-margin-left"
+            />
+          </div>
+        </div>
+      </section>
+
+        <!-- Handler file -->
+        <section
+          id="handler"
+          class="w3-container w3-white w3-card file-card w3-padding tab"
+          style="margin-top:0;display:none"
+        >
+        <div class="w3-row">
+          <div class="w3-col s8">
+            <h3>CHARACTER BIO</h3>
+            <p><strong>[SURNAME], [FIRST] "NICKNAME" [M.]</strong></p>
+            
+            <h4>Basic Information</h4>
+            <p><strong>OCCUPATION:</strong> [Occupation]</p>
+            <p><strong>PRONOUNS:</strong> [Pronouns]</p>
+            <p><strong>GENDER:</strong> [Gender]</p>
+            <p><strong>SEX:</strong> [Sex]</p>
+            <p><strong>AGE:</strong> [Age]</p>
+            <p><strong>BIRTHDAY:</strong> [Birthday]</p>
+            <p><strong>HEIGHT:</strong> [Height]</p>
+            <p><strong>BLOOD TYPE:</strong> [Blood Type]</p>
+            
+            <h4>Preferences</h4>
+            <p><strong>LIKES:</strong> [Likes]</p>
+            <p><strong>DISLIKES:</strong> [Dislikes]</p>
+            
+            <h4>COLOR PALETTE</h4>
+            <p><strong>HAIR:</strong> [Hair color]</p>
+            <p><strong>EYES:</strong> [Eye color]</p>
+            <p><strong>SKIN:</strong> [Skin tone]</p>
+            
+            <h4>Additional Notes</h4>
+            <p><strong>Position:</strong> Mission Control / Case Assignment</p>
+            <p><strong>Summary:</strong> The voice in the earpiece and the one
+              signing off on all the questionable plans.
+            </p>
+            <p><strong>Style:</strong> [Professional, chaotic, overprotective]</p>
+            <p><strong>Notes:</strong> How they clash or click with the agent.</p>
+          </div>
+          <div class="w3-col s4">
+            <img
+              src="img/buddy.png"
+              alt="Character profile"
+              class="char-profile w3-right w3-margin-top w3-margin-left"
+            />
+          </div>
+        </div>
+      </section>
+
+        <!-- Civilians / Others file -->
+        <section
+          id="civilians"
+          class="w3-container w3-white w3-card file-card w3-padding tab"
+          style="margin-top:0;display:none"
+        >
+        <div class="w3-row">
+          <div class="w3-col s8">
+            <h3>CHARACTER BIO</h3>
+            <p><strong>[SURNAME], [FIRST] "NICKNAME" [M.]</strong></p>
+            
+            <h4>Basic Information</h4>
+            <p><strong>OCCUPATION:</strong> [Occupation]</p>
+            <p><strong>PRONOUNS:</strong> [Pronouns]</p>
+            <p><strong>GENDER:</strong> [Gender]</p>
+            <p><strong>SEX:</strong> [Sex]</p>
+            <p><strong>AGE:</strong> [Age]</p>
+            <p><strong>BIRTHDAY:</strong> [Birthday]</p>
+            <p><strong>HEIGHT:</strong> [Height]</p>
+            <p><strong>BLOOD TYPE:</strong> [Blood Type]</p>
+            
+            <h4>Preferences</h4>
+            <p><strong>LIKES:</strong> [Likes]</p>
+            <p><strong>DISLIKES:</strong> [Dislikes]</p>
+            
+            <h4>COLOR PALETTE</h4>
+            <p><strong>HAIR:</strong> [Hair color]</p>
+            <p><strong>EYES:</strong> [Eye color]</p>
+            <p><strong>SKIN:</strong> [Skin tone]</p>
+            
+            <h4>Additional Notes</h4>
+            <p><strong>Connection:</strong> Local, friend, nuisance, or
+              collateral.
+            </p>
+            <p><strong>Summary:</strong> Their deal, why they matter to the
+              story, and what chaos they bring.
+            </p>
+            <p><strong>Key Moments:</strong> Bullet points you can fill in as
+              scenes happen.
+            </p>
+          </div>
+          <div class="w3-col s4">
+            <img
+              src="img/buddy.png"
+              alt="Character profile"
+              class="char-profile w3-right w3-margin-top w3-margin-left"
+            />
+          </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="w3-center w3-small w3-padding-16 w3-text-grey">
+        EA owns MySims Agents - I'm just doing this for fun
+        <button
+          class="w3-button w3-black w3-small w3-margin-left"
+          type="button"
+          onclick="spinSite()"
+        >
+          Spin
+        </button>
+      </footer>
+    </div>
+
+    <script>
+      function openSidebar() {
+        document.getElementById("sidebar").style.display = "block";
+      }
+      function closeSidebar() {
+        document.getElementById("sidebar").style.display = "none";
+      }
+      function toggleWorldDropdown() {
+        var menu = document.getElementById("worldMenu");
+        if (menu.classList.contains("w3-show")) {
+          menu.classList.remove("w3-show");
+          menu.classList.add("w3-hide");
+        } else {
+          menu.classList.remove("w3-hide");
+          menu.classList.add("w3-show");
+        }
+      }
+      function openTab(evt, tabId) {
+        var i;
+        var tabs = document.getElementsByClassName("tab");
+        for (i = 0; i < tabs.length; i++) {
+          tabs[i].style.display = "none";
+        }
+        var links = document.getElementsByClassName("tablink");
+        for (i = 0; i < links.length; i++) {
+          links[i].classList.remove("active-tab");
+        }
+        document.getElementById(tabId).style.display = "block";
+        evt.currentTarget.classList.add("active-tab");
+      }
+      function spinSite() {
+        document.body.classList.add("spin-site");
+        setTimeout(function () {
+          document.body.classList.remove("spin-site");
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MISSION STATUS > CONTACT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- W3.CSS -->
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/w3css/4/w3.css"
+    />
+
+    <!-- League Spartan font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap"
+    />
+
+    <!-- Project stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="w3-light-grey">
+    <!-- Slide-out sidebar (right) -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-right"
+      style="display:none;width:220px;right:0"
+      id="sidebar"
+    >
+      <button
+        class="w3-bar-item w3-button w3-large"
+        onclick="closeSidebar()"
+      >
+        ✕ Close
+      </button>
+      <a href="home.html" class="w3-bar-item w3-button">HOME</a>
+      <a href="chara.html" class="w3-bar-item w3-button">CHARACTERS</a>
+      <div class="w3-dropdown-click">
+        <button
+          class="w3-button w3-block w3-left-align"
+          onclick="toggleWorldDropdown()"
+        >
+          WORLD ▼
+        </button>
+        <div
+          id="worldMenu"
+          class="w3-hide w3-white"
+        >
+          <a href="world.html" class="w3-bar-item w3-button">World Overview</a>
+          <a href="headquarters.html" class="w3-bar-item w3-button">HQ Gallery</a>
+          <a href="headquarters1.html" class="w3-bar-item w3-button">HQ Gallery 1</a>
+          <a href="headquarters2.html" class="w3-bar-item w3-button">HQ Gallery 2</a>
+          <a href="headquarters3.html" class="w3-bar-item w3-button">HQ Gallery 3</a>
+        </div>
+      </div>
+      <a href="logs.html" class="w3-bar-item w3-button">LOGS</a>
+      <a href="contact.html" class="w3-bar-item w3-button">CONTACT</a>
+      <a href="dev.html" class="w3-bar-item w3-button">DEV ROADMAP</a>
+    </nav>
+
+    <!-- Top bar -->
+    <header class="w3-bar w3-black">
+      <span class="w3-bar-item w3-large"><a href="home.html">MISSION STATUS</a> &gt; CONTACT</span>
+      <button
+        class="w3-bar-item w3-button w3-xlarge w3-right"
+        onclick="openSidebar()"
+      >
+        ☰
+      </button>
+    </header>
+
+    <div class="page-wrapper">
+      <main>
+        <section class="w3-card w3-white w3-padding">
+          <h2>Contact / Comments</h2>
+          <p class="w3-small w3-text-grey">
+            Drop thoughts, theories, or requests here. This is just a front-end
+            form for now, so nothing actually gets sent anywhere yet.
+          </p>
+
+          <form class="w3-container w3-margin-top" action="#" method="post">
+            <label class="w3-text-black">
+              Type of message
+              <select
+                class="w3-select w3-border w3-margin-top"
+                name="type"
+              >
+                <option value="comment" selected>General comment</option>
+                <option value="bug">Bug report</option>
+                <option value="feature">Feature / idea</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+
+            <label class="w3-text-black">
+              Name / Alias
+              <input
+                class="w3-input w3-border w3-margin-top"
+                type="text"
+                name="name"
+                required
+              />
+            </label>
+
+            <label class="w3-text-black w3-margin-top">
+              Email (optional)
+              <input
+                class="w3-input w3-border w3-margin-top"
+                type="email"
+                name="email"
+                placeholder="for replies, if you want"
+              />
+            </label>
+
+            <label class="w3-text-black w3-margin-top">
+              Comments
+              <textarea
+                class="w3-input w3-border w3-margin-top"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </label>
+
+            <button
+              class="w3-button w3-black w3-margin-top w3-block"
+              type="submit"
+            >
+              Submit Comment
+            </button>
+          </form>
+        </section>
+      </main>
+
+      <footer class="w3-center w3-small w3-padding-16 w3-text-grey">
+        EA owns MySims Agents - I'm just doing this for fun
+        <button
+          class="w3-button w3-black w3-small w3-margin-left"
+          type="button"
+          onclick="spinSite()"
+        >
+          Spin
+        </button>
+      </footer>
+    </div>
+
+    <script>
+      function openSidebar() {
+        document.getElementById("sidebar").style.display = "block";
+      }
+      function closeSidebar() {
+        document.getElementById("sidebar").style.display = "none";
+      }
+      function toggleWorldDropdown() {
+        var menu = document.getElementById("worldMenu");
+        if (menu.classList.contains("w3-show")) {
+          menu.classList.remove("w3-show");
+          menu.classList.add("w3-hide");
+        } else {
+          menu.classList.remove("w3-hide");
+          menu.classList.add("w3-show");
+        }
+      }
+      function spinSite() {
+        document.body.classList.add("spin-site");
+        setTimeout(function () {
+          document.body.classList.remove("spin-site");
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
+
+
